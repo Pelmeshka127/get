@@ -11,7 +11,7 @@ def dec_to_bin(num):
     return [int(bit) for bit in bin(num)[2:].zfill(8)]
 
 def print_voltage(num):
-    print("Напряжение на выходе V = {:.3f} B".format(num / 256.0))
+    print("Напряжение на выходе V = {:.4f} B".format(num / 256.0))
 
 try:
     while(True):
@@ -19,7 +19,7 @@ try:
 
         str = input()
 
-        if (str == "exit"):
+        if (str == "stop"):
             break
 
         try:

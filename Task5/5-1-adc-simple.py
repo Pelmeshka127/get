@@ -19,7 +19,7 @@ def dec_to_bin(num):
     return [int(bit) for bit in bin(num)[2:].zfill(8)]
 
 def adc():
-    for i in range(255):
+    for i in range(256):
         dac_new = dec_to_bin(i)
         gpio.output(dac, dac_new)
         comp_value = gpio.input(comp)
@@ -33,7 +33,7 @@ try:
         value = adc()
         if value != 0:
             print("Цифровое значение равно = ", value)
-            print("Напряжение на выходе V = {:.4f} B".format(value *3.3 / 256))
+            print("Напряжение на выходе V = {:.4f} B".format(value * 3.3 / 256))
 
 finally:
     gpio.output(dac, 0)

@@ -26,7 +26,7 @@ def adc():
         comp_value = gpio.input(comp)
         time.sleep(0.05)
 
-        if comp_value == 0:
+        if comp_value == 1:
             k-=2**i
     return k
 
